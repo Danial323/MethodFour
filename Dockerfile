@@ -18,14 +18,15 @@ USER root
 RUN apt-get install htop \
     apt-get install nmap \
     apt-get install aria2 \
-    apt-get install tracerroute
+    apt-get install traceroute
     
 
 RUN	apt-get install htop
 
 # 3) install packages
-RUN pip install --no-cache-dir networkx scipy python-louvain
-    pip install babypandas
+RUN pip install --no-cache-dir networkx scipy python-louvain \
+    pip install babypandas \
+    pip install geopandas 
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
 USER $NB_UID
