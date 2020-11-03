@@ -15,12 +15,17 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 
 # 2) change to root to install packages
 USER root
+RUN apt-get install htop \
+    apt-get install nmap \
+    apt-get install aria2 \
+    apt-get install tracerroute
+    
 
 RUN	apt-get install htop
 
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
-
+    pip install babypandas
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
 USER $NB_UID
