@@ -19,7 +19,7 @@ RUN apt-get install -y htop aria2 nmap traceroute
   
 
 # 3) install packages
-RUN pip install --no-cache-dir networkx scipy python-louvain babypandas geopandas 
+RUN pip install --no-cache-dir networkx scipy sklearn pandas numpy
     
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
